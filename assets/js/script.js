@@ -1,15 +1,13 @@
-function passouMouse(){// 顱uando passa o mouse no botao
-	console.log("Passou o mouse");
-}
-function clicouMouse(){// 顱uando clica no botao
-	console.log("Clicou o Mouse");
-}
-function saiuMouse() {// 顱uando tira o mouse do botao
-	console.log("Tirou o mouse");
-}
-function soltouBotao(){//isso 顱uando solta o botao do mouse dps de clicar
-	console.log("Soltou botao");                                                                                                                                                                                                                                                                                       
-}
-function moverMouse(){//isso 顱uando o mouse mover dentro do botao
-	console.log("mouse moveu");
+function eventoMostrar(){
+		var tipo = document.getElementById("senha").type;
+		if(tipo == "password"){
+			document.getElementById("senha").type = "text";
+			document.getElementById("mosSenha").innerHTML = "ESCONDER";
+			document.getElementById("mosSenha").style.marginLeft = "140px";
+		}else {
+			document.getElementById("senha").type = "password";
+			document.getElementById("mosSenha").innerHTML = "MOSTRAR";
+			document.getElementById("mosSenha").style.marginLeft = "145px";
+		}
+	 
 }

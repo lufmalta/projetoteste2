@@ -1,15 +1,18 @@
 <html>
 <head>
-	<title>Revisao</title>
-	<script type="text/javascript" src="assets/javascript/script.js"></script>
+	<meta charset="UTF-8">
+	<title>Numeros</title>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<style type="text/css">
+		
+	</style>
 </head>
-<body>
-		<input type="number" name="campo1" id="campo1">
-		<input type="number" name="campo2" id="campo2"><br/><br/>
-		<button onclick="somar()">Somar</button>
-		<button onclick="subtrair()">Subtrair</button>
-		<button onclick="multiplicar()">Multiplicar</button>
-		<button onclick="dividir()">Dividir</button>
+<body onload="resetar()">
+	<div id="n1">0</div>
+	<input type="text" id="n2" maxLength="3"/>
+	<div style="clear:both"></div>
+	<button onclick="mudarNumero()">Verificar</button>
 </body>
 </html>
 

@@ -2,15 +2,10 @@
 <head>
 	<title>Teste Teclado</title>
 	<script type="text/javascript" src="assets/js/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body id="body">
-	<div>
-		<h4 id="mosSenha" onclick="eventoMostrar()"
-		>MOSTRAR</h4>
-		<input id="senha"  type="password"  maxLength="18">
-	</div>
+	<input  type="text" maxLength="20" onkeypress="clicouTeclado(event)"
+	onkeyup="soltouTecla(event)" onkeydown="apertouTecla(event)"/>
 </body>
 </html>
-
 

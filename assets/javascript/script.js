@@ -1,5 +1,8 @@
-function mudarTexto(nome, idade){	
-	var area  = document.getElementById("area");
-	var texto = prompt("qual o seu sobrenome?");
-	area.innerHTML = nome + " "+ texto + " E tem idade de " + idade + "anos";
+function adicionarIngredientes(){
+	var ing = document.getElementById("ingrediente").value;
+	var listahtml = document.getElementById("lista").innerHTML;
+	listahtml = listahtml + "<li>"+ing+"</li>";
+	document.getElementById("lista").innerHTML = listahtml;  
+	document.getElementById("ingrediente").value = "";
+
 }

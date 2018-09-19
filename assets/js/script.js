@@ -1,12 +1,8 @@
-function clicouTeclado(event){
-	console.log("Clicou tecla: " +event.keyCode);
+function paginaCarregada(){
+	alert("pagina carregou");
 }
-function soltouTecla(event){
-	console.log("Soltou Tecla"+event.keyCode);
-}
-function apertouTecla(event){
-	console.log("Apertou tecla" +event.keyCode);
-	if(event.shiftKey == true && event.keyCode == 69){
-		console.log("Clicou o botao shift + o E");
-	}
-}
+//também pode fazer assim:
+
+// window.onload = function(){
+// 	alert("pagina carregou");
+// }

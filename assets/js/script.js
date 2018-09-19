@@ -1,28 +1,27 @@
-function apagarTexto(){
-	var campTexto = document.getElementById("campoTexto").value;
-	campTexto = "";
-	document.getElementById("campoTexto").value = campTexto;
-	sumirApagar();
+
+var intervalo = setInterval(addBola, 1000);
+
+function parar(){
+	clearInterval(intervalo);
 }
-function mostrarApagar(){
-	var apagar = document.getElementById("texto").style.display;
-	apagar = "block";
-	document.getElementById("texto").style.display = apagar;
+function addBola(){
+	var bola = document.createElement("div");
+	bola.setAttribute("class", "bola");
+	var p1 = Math.floor(Math.random() * 1000);
+	var p2 = Math.floor(Math.random() * 350);
+	var selecionarCor = "#";
+	var colorir = null;
+	for(var i = 0;i <= 5;i++){
+		colorir = Math.floor(Math.random() * 10);
+		selecionarCor =  selecionarCor + colorir;
+	}
+	bola.setAttribute("style","background-color:"+selecionarCor+";left:"+p1+"px;top:"+p2+"px;");
+	bola.setAttribute("onclick","estourar(this)");
+	document.body.appendChild(bola);
 }
-function sumirApagar(){
-	var apagar = document.getElementById("texto").style.display;
-	apagar = "none";
-	document.getElementById("texto").style.display = apagar;
+function estourar(elemento){
+	document.body.removeChild(elemento);
 }
-function quandoMudar(obj){
-	console.log("Mudou para: "+obj.value);
-}
-function focou(){
-	console.log("Focou!");
-}
-function saiuFoco(){
-	console.log("Saiu do foco");
-}
-function apertouSubmit(){
-	document.write("Enviou formulário");
+function voltar(){
+	intervalo = setInterval(addBola, 1000);
 }

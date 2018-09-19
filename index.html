@@ -1,22 +1,17 @@
 <html>
 <head>
-	<title>Estourar Bolinhas</title>
+	<meta charset="utf-8">
+	<title>Manipulando formulario</title>
 	<script type="text/javascript" src="assets/js/script.js"></script>
-	<style type="text/css">
-	.bola {
-		width:50px;
-		height:50px;
-		background-color:#000;
-		cursor:pointer;
-		border-radius:25px;
-		position:absolute;
-	}
-
-
-	</style>
 </head>
 <body>
-	<button onclick ="parar()" id="botao">Parar</button>
-	<button onclick ="voltar()" id="voltar" disabled="true">Voltar</button>
+	<form method="POST" onsubmit="return validar()">
+		Digite no maximo 2 algarismos</br>
+		<input type="text" name="texto" id="texto"></br></br>
+		<input type="submit" value="Enviar">
+
+
+
+	</form>
 </body>
 </html>

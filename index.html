@@ -1,39 +1,25 @@
-<html>	
+<html>
 	<head>
-		<title> Pagina de teste </title>
-		<meta charset="UTF-8">
-	</head>	
+		<title> Teste Site </title>
+	</head>
 	<body>
-		<table width ="500" border="1">
-			<tr bgcolor="#999999">
-				<td>Produtos</td>
-				<td>Qt.</td>
-				<td>Preço</td>
-			</tr>			
-			<tr>
-				<td>
-					<a href= "assets/images/cruz.png" target="_blank"/><img src="assets/images/cruz.png" width="50"/>
-			    </td>
-				<td>2</td>
-				<td>10</td>
-			</tr>
-
-			<tr>
-				<td><a href="assets/images/cruz.png" target="_blank">Cruz</a></td>
-				<td>1</td>
-				<td>5</td>
-			</tr>	
-
-			<tr>
-				<td> macarrão </td>
-				<td>1</td>
-				<td>15</td>
-			</tr>
-
-			<tr bgcolor="red">
-				<td colspan="2" align="center"> Subtotal </td>
-				<td>40</td>
-			</tr>
-		</table>	
-	</body>	
-</html>
+		<form method="POST">
+			Usuário:<br/>
+			<input type="text" name="usuario"/>
+			<input type="radio" name="btnUsuario"/><br/>
+			Senha:</br>			
+			<input type="password" name="senha"/>
+			<input type="checkbox" name="btnSenha"/><br/><br/>
+			<textarea></textarea><br/><br/>
+			<select name="opcoes">
+				<option value= "1">Campo 1</option>
+				<option value= "2">Campo 2</option>
+				<option value= "3">Campo 3</option>
+			</select><br/><br/>
+			<input type="radio" name="resp" value="1"/> Opção 1<br/>
+			<input type= "radio" name="resp" value="2"/> Opção 2<br/>
+			<input type= "radio" name="resp" value="3"/> Opção 3<br/><br/>
+			<input type="submit" value="Enviar"/>
+		</form>		
+	</body>
+</html>	

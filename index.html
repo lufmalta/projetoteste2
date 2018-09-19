@@ -4,8 +4,23 @@
 	<title>Aulas Javascript</title>
 	<script type="text/javascript" src="assets/js/script.js" ></script>
 </head>
-<body onload="paginaCarregada()" >
-	Tem um elemento aqui
+<body>
+	<h4 id="texto" onclick="apagarTexto()"style="position:absolute;margin:5px;margin-left:120px;font-size:10px;
+	cursor:pointer;display:none">Apagar</h4>
+	<form method="POST" onsubmit="apertouSubmit()">
+		<input name="nome" onfocus="focou()" onblur="saiuFoco()" onkeypress="mostrarApagar()" id="campoTexto" type="text" maxLength="15"/></br></br>
+
+		<select name="cidade" onchange="quandoMudar(this)">
+			<option>Goiânia</option>
+			<option>Sao Paulo</option>
+			<option>Anápolis</option>
+			<option>Rio Grande do Sul</option>
+		</select></br></br>
+		<input name="botao" style="width:60px;height:40px"type="submit" value="Enviar"/>
+
+
+
+	</form>
+
 </body>
 </html>
-

@@ -1,27 +1,29 @@
+var interval = setInterval(addBola, 1000);
 
-var intervalo = setInterval(addBola, 1000);
-
-function parar(){
-	clearInterval(intervalo);
-}
 function addBola(){
-	var bola = document.createElement("div");
-	bola.setAttribute("class", "bola");
-	var p1 = Math.floor(Math.random() * 1000);
-	var p2 = Math.floor(Math.random() * 350);
-	var selecionarCor = "#";
-	var colorir = null;
-	for(var i = 0;i <= 5;i++){
-		colorir = Math.floor(Math.random() * 10);
-		selecionarCor =  selecionarCor + colorir;
+	var bolinha = document.createElement("div");
+	bolinha.setAttribute("class", "bola");
+	var p1 = Math.floor(Math.random() * 900);
+	var p2 = Math.floor(Math.random() * 400);
+	var arrayCores = ["A","B","C","D","E","F","0","1","2","3","4","5","6","7","8","9"];
+	var cor = null;
+	var coresSelect = "#";
+	for(i = 0;i <= 5; i++){
+		cor = Math.floor(Math.random() * 16);
+		coresSelect = coresSelect + arrayCores[cor];
 	}
-	bola.setAttribute("style","background-color:"+selecionarCor+";left:"+p1+"px;top:"+p2+"px;");
-	bola.setAttribute("onclick","estourar(this)");
-	document.body.appendChild(bola);
+	bolinha.setAttribute("style","background-color:"+coresSelect+";left:"+p1+"px;top:"+p2+"px;");
+	bolinha.setAttribute("onclick","estourar(this)"); 
+	document.body.appendChild(bolinha);
 }
 function estourar(elemento){
 	document.body.removeChild(elemento);
 }
+function parar(){
+	clearInterval(this.interval);
+	document.getElementById('voltar').disabled = false;
+}
 function voltar(){
-	intervalo = setInterval(addBola, 1000);
+	interval = setInterval(addBola, 1000);
+	document.getElementById('voltar').disabled = true;
 }

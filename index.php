@@ -6,11 +6,9 @@
 	 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css">
 	<title>Projeto Bootstrap 4</title>
-	<style type="text/css">
-		.caixa{
-			width:300px;
-			height:300px;
-			border:1px solid #CCC;
+	<style type="text/css">		
+		.carousel-item img {
+			height:650px;
 		}
 
 
@@ -18,14 +16,36 @@
 </head>
 <body>
 	
-		<div class="container">		
-		<div class="alert alert-danger alert-dismissible  fade show" role="alert">			
-			E-mail e/ou senha invalidos.
-			<button class="close" data-dismiss="alert" >
-				<span aria-hidden="true">&times;</span>
-			</button>
+	<div class="container">
+		<div id="slideShow" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#slideShow" data-slide-to="0"></li>
+				<li data-target="#slideShow" data-slide-to="1"></li>
+				<li data-target="#slideShow" data-slide-to="2"></li>
+				<li data-target="#slideShow" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="assets/images/foto1.jpg" class="w-100" >
+				</div>
+				<div class="carousel-item">
+					<img src="assets/images/foto2.jpg" class="w-100" >
+				</div>
+				<div class="carousel-item">
+					<img src="assets/images/foto3.jpg" class="w-100" >
+				</div>
+				<div class="carousel-item">
+					<img src="assets/images/foto4.jpg" class="w-100" >
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#slideShow" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#slideShow" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
 		</div>
-	</div>
+	</div>		
 
 			
 

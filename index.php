@@ -19,17 +19,19 @@
 <body>
 	
 		<div class="container">
-			<ul class="list-inline">
-				<li class="list-inline-item">Item 1</li>
-				<li class="list-inline-item">Item 2</li>
-				<li class="list-inline-item">Item 3</li>
-			</ul>
-			<br/>
-			<h1>Aqui esta o titulo sem o class h1</h1>
-			<div class="h1">Aqui esta o titulo com o class h1</div>
-			<h3>Aqui tem um titulo e <span class="text-muted">Subtitulo</span></h3>
-			<h3>Aqui tem um titulo e <span class="mark">Marcado</span></h3>
-			<div class="caixa text-center">Aqui tem um texto</div>
+			<div style="width:500px;" >
+				<img src="assets/images/cruz.png" class="img-fluid"> <!-- aqui ele alinha a imagem dentro do espa诠disponivel -->
+			</div>
+			<br/><br/>
+			<img src="assets/images/cruz.png" class="img-thumbnail"> <!-- esse aqui coloca um espa袭ento entre a imagem e as laterais 
+			 -->
+			 <br/><br/>
+			<img src="assets/images/cruz.png" class="rounded"> <!-- aqui ele faz as bordas ficarem arredondadas -->
+			<br/><br/>
+			<figure>
+				<img src="assets/images/cruz.png" class="figure-img img-fluid rounded  img-thumbnail">
+				<figcaption class="figure-caption text-danger text-right">Descriçao da imagem</figcaption>
+			</figure>
 		</div>
 
 			

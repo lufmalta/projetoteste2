@@ -1,9 +1,12 @@
 <?php 
-	try{
-		$pdo = new PDO("mysql:dbname=projeto_esqueciasenha;host=localhost", "root", "");
-		$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-	}catch(PDOException $e){
-		echo "Erro: ".$e->getMessage();
-	}
+$dsn = "mysql:dbname=projeto_loginunico;host=localhost";
+$dbuser = "root";
+$dbpass = "";
 
+try{
+	$pdo = new PDO($dsn, $dbuser, $dbpass);
+	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+	echo "Erro: ".$e->getMessage();
+}
 ?>

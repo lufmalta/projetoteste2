@@ -1,12 +1,34 @@
 <?php 
-$dsn = "mysql:dbname=projeto_loginunico;host=localhost";
-$dbuser = "root";
-$dbpass = "";
+/*
+* Classe Config
+* Nesta classe realiza a conexao com o banco de dados
+*
+* 
+* @package ProjetoTeste2
+* @author Luiz Fernando <lufmalta@gmail.com>
+*/
 
-try{
-	$pdo = new PDO($dsn, $dbuser, $dbpass);
-	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-}catch(PDOException $e){
-	echo "Erro: ".$e->getMessage();
+class Config{
+	private $dsn;
+	private $dbuser;
+	private $dbpass;
+	private $pdo;
+
+	public function __construct(){
+		$this->dsn = "mysql:dbname=blog;host=localhost";
+		$this->dbuser = "root";
+		$this->dbpass = "";
+		$this->createPdo();
+	}
+
+	private function createPdo(){
+		$this->pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
+		$this->pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+	}
+	public function getPdo(){
+		return $this->pdo;
+	}
+
 }
+
 ?>

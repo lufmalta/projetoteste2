@@ -2,74 +2,74 @@ body{
 	margin:0;
 	padding:0;
 }
-.topo{
+.topo {
 	width:100%;
-	height:50px;
-	background-color:#333333;
+	background-color:#CCC;
+
 }
 .topoint {
-	margin:auto;
 	width:100%;
 	max-width:1200px;
 	height:50px;
+	margin:auto;
+	background-color:#DDD;
 }
-.toporight {
-	float:right;
+.topoleft {
 	width:50%;
-	height:50px;
-}
-.toporight ul {
-	list-style:none;
-}
-.toporight ul li{
-	float:right;
-	margin-left:4px;
-	margin-right:4px;
-}
-.toporight li a {
-	text-decoration:none;
-	font-size:18px;
-	color:#CCC;
-}
-.toporight li a:hover{
-	color:blue;
-}
-
-.topoleft{
 	float:left;
-	width:50%;
 	height:50px;
 }
 .topoleft ul {
 	list-style:none;
 }
-.topoleft ul li{
+.topoleft ul li {
 	float:left;
 	margin-left:4px;
-	margin-right:4px;
+	margin-right:4px;	
 }
-.topoleft li a {
+.topoleft ul a {
 	text-decoration:none;
-	font-size:18px;
-	color:#CCC;
+	color:black;
 }
-.topoleft li a:hover{
+.topoleft ul a:hover {
 	color:blue;
 }
-.topoleft h3{
-	color:orange;
-	margin:auto;
+.toporight {
+	width:50%;
 	float:right;
-	margin-top:1px;
+	height:50px;
 }
-.formulario {
+.toporight ul {
+	list-style:none;
+}
+.toporight ul li {
+	float:right;
+	margin-left:4px;
+	margin-right:4px;
+	text-decoration:none;
+}
+.toporight ul a {
+	text-decoration:none;
+	color:black;
+}
+.toporight ul a:hover {
+	color:blue;
+}
+.container {
+	width:100%;
+	
+}
+.containerint {
+	width:100%;
+	max-width:1200px;
+	min-height:400px;
 	margin:auto;
-	margin-top:10px;
-	width:400px;
-	height:300px;
-	background-color:#454545;
-	border: 1px solid #000000;
+	
 }
-.formulario form {
-	padding:100px;
+.containerint .botaoadd{
+	margin-left:350px;
+	margin-top:10px;
+}
+.conteudo table {
+	margin:auto;
 }

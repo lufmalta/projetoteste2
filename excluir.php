@@ -1,12 +1,12 @@
 <?php 
-	require 'config.php';
-	if(isset($_GET['id']) && empty($_GET['id']) == false){
-		$id = addslashes($_GET['id']);
-		$sql = "DELETE FROM usuarios WHERE id = '$id'";
-		$pdo->query($sql);
-		header("Location: index.php");
-	}else {
-		header("Location: index.php");
-	}
-	
-?>	
+include "contato.class.php";
+$excluir = new Contato();
+if(!empty($_GET['id'])){
+
+	$id = $_GET['id'];
+	$excluir->excluir($id);
+}
+	header("Location: index.php");
+
+
+?>

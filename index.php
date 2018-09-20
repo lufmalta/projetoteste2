@@ -7,9 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css">
 	<title>Projeto Bootstrap 4</title>
 	<style type="text/css">		
-		.carousel-item img {
-			height:650px;
-		}
+		.container {
+			margin-top:20px;
+		}	
 
 
 	</style>
@@ -17,22 +17,62 @@
 <body>
 	
 	<div class="container">
+		<form method="POST">
+			E-mail:<br/>
+			<input type="email" name="email"/><br/>
 
-			<div class="dropdown btn-group"> <!-- posso fazer o menu abrir para esquerda, direita, cima e baixo, s󠵳ar os comandos dentro do class: para cima- dropup, para esquerda dropleft, para direita dropright -->
-				<a class="btn btn-primary" href="http://www.instagram.com.br">Instagram</a>
-				<a class="btn btn-primary dropdown-toggle dropdown-toggle-split" href="#" data-toggle="dropdown"></a>
+			Senha:<br/>
+			<input type="password" name="senha"/><br/><br/>
 
-				<div class="dropdown-menu">
-					<a  class="dropdown-item" href="http://www.google.com.br">Google</a>
-					<a class="dropdown-item" href="http://mail.facebook.com.br">Facebook</a>
+			<input type="submit" value="Entrar"/>
+		</form>
+		<hr/>
 
-					<a class="dropdown-item" href="http://mail.google.com.br">Gmail</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="http://www.youtube.com.br">Youtube</a>
-				</div>
+		<form method="POST">
+			<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
+				<label for="email">Email:</label>
+				<input id="email" type="email" name="email" class="form-control" />
+			</div>
+			<div class="form-group">
+				
+				<input type="password" name="senha" class="form-control" placeholder="Senha"  />
+			</div>
+			<div class="form-group">
+				<input class="btn btn-danger" type="submit" value="Entrar">
 			</div>
 			
-		</div>	
+			
+			
+		</form>
+		<hr/>
+		<form method="POST">
+			<div class="form-row">
+				<div class="col">
+					<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
+						<input id="name" type="text" name="name" class="form-control" placeholder="Nome Completo:"/>
+					</div>
+				</div>
+				<div class="col">					
+					<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
+						<input id="email" type="email" name="email" class="form-control" placeholder="Email:"/>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">				
+						<input type="password" name="senha" class="form-control" placeholder="Senha:"  />
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col">
+					<div class="form-group">
+						<input class="btn btn-success" type="submit" value="Entrar">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+	</div>	
 
 			
 

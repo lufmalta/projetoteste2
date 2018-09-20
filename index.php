@@ -6,27 +6,29 @@
 		private $data;
 		private $corpo;
 		private $comentarios;
+		private $qtComentarios;	
 
-	public function __construct(){
-		$this->titulo = "Titulo nao definido";
-		$this->data = "Data nao definida";
-		$this->corpo = "Corpo nao definido";
-		$this->comentarios =  "Corpo nao definido";
-	}	
+	public function addComentarios($msg){
+		$this->comentarios[] = $msg; 
+		$this->ContarComentarios();
+	}
 
-	public function setTitulo($t){
-		if(is_string()){
-			$this->titulo = $t;
-		}
-		 
-	}	
-	public function getTitulo(){
-		return $this->titulo;
+	public function getQtComentarios(){
+		return $this->qtComentarios;
+	}
+	private function ContarComentarios(){
+		$this->qtComentarios = count($this->comentarios);
 	}
 }
 
 $post = new Post();
-echo $post->getTitulo();
+$post->addComentarios("Teste 1");
+$post->addComentarios("Teste 2");
+$post->addComentarios("Teste 3");
+$post->addComentarios("Teste 4");
+$post->addComentarios("Novo comentario");
+
+echo "Quantidade de comentarios: ".$post->getQtComentarios();
 
 ?>
 

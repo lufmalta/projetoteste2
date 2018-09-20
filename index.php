@@ -1,24 +1,25 @@
-<?php
-	$nomes = array(
-				array("nome"=>"Luiz Fernando",
-					"qualidade"=>"forte",
-					"humor"=>"engraçado",
-					"idade"=>27),
-				array( "nome"=>"Lanna",
-					"qualidade"=>"fraco",
-					"humor"=>"engraçado",
-					"idade"=>27),
-				array("nome"=>"Paulo",
-					"qualidade"=>"alto",
-					"idade"=>24,
-					"humor"=>"legal"),
-				array("nome"=>"Henrique",
-					"qualidade"=>"gordo",
-					"humor"=>"honesto",
-					"idade"=>30
-					)
-				);
-	foreach($nomes as  $lista){
-		echo "Nome: ".$lista["nome"]."</br>"."Qualidade: ".$lista["qualidade"]."</br>"."Humor: ".$lista["humor"]."</br>"."Idade: ".$lista["idade"]."</br>";
+<?php 
+	$dsn = "mysql:dbname=testebanco;host=localhost";
+	$dbuser = "root";
+	$dbpass = "";
+
+try {
+	$pdo = new PDO($dsn, $dbuser, $dbpass);
+
+	$sql = "SELECT * FROM usuarios WHERE endereco = 'av 136'";
+	$sql = $pdo->query($sql);
+
+	if($sql->RowCount() > 0){ // RowCount é uma função q conta as linhas
+
+		foreach($sql->fetchAll() as $usuarios) // fetchAll é uma função que pega todos os dados e coloca
+		//em um array
+			echo "Nome: ".$usuarios['nome']." - "."Endereço: ".$usuarios['endereco']."</br>";
+	}else {
+		echo "Não possui usuarios cadastrados";
 	}
- ?>
+	
+} catch(PDOException $e){
+	echo "Conexão Falhou:".$e->getMessage();
+}	
+
+?>

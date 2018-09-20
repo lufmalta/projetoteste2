@@ -1,54 +1,53 @@
 <?php 
-	$dsn = "mysql:dbname=projeto_ordenar;host=localhost";
+	$dsn = "mysql:dbname=projeto_comentarios;host=localhost";
 	$dbuser = "root";
 	$dbpass = "";
 try {
 	$pdo = new PDO($dsn, $dbuser, $dbpass);
 	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-
-} catch(PDOExcepetion $e){
-	echo "Erro banco".$e->getMessage();
-}	
-	if(isset($_GET['ordem']) && empty($_GET['ordem']) == false){
-		$ordem = addslashes($_GET['ordem']);
-		$sql = "SELECT * FROM usuarios ORDER BY ".$ordem;
-	}else {
-		$ordem = '';
-		$sql = "SELECT * FROM usuarios"; 
-	}
+} catch(PDOException $e){
+	echo "Erro Banco".$e->getMessage();
+	exit;
+}
 ?>
-<form method = "GET">
-	<select name="ordem" onchange="this.form.submit()">
-		<option></option>
-		<option value="nome" <?php echo($ordem=="nome")?'selected="selected"':'' ?>>Por nome</option>
-		<option value="idade" <?php echo($ordem=="idade")?'selected="selected"':'' ?>>Por idade</option>
-	</select>
+<fieldset>
+	<form method="POST">
+		Nome:</br>
+		<input type="text" name="nome"/></br></br>
+		Mensagem:</br>
+		<textarea name="mensagem"></textarea></br></br>
+		<input type="submit" value="Enviar"/>
 
-</form>
-<table border="1" width="400">
-	<tr>
-		<th colspan="2">Usuarios</th>
+	</form>
 
-	</tr>
-	<tr>
-		<th>Nome</th>
-		<th>Idade</th>
-	</tr>
-	<?php
-		$sql = $pdo->query($sql);
-		if($sql->rowCount() > 0){
-			foreach($sql->fetchAll() as $usuario):
-			?>
-				<tr>
-					<td><?php echo $usuario['nome'] ?></td>
-					<td><?php echo $usuario['idade'] ?></td>
-				</tr>
-			<?php
-			endforeach;	
-
+</fieldset></br>
+<?php 
+	if(isset($_POST['nome']) && empty($_POST['nome']) == false){
+		if(isset($_POST['mensagem']) && empty($_POST['mensagem']) == false){
+			$nome = $_POST['nome'];
+			$mensagem = $_POST['mensagem'];
+			$sql = $pdo->prepare("INSERT INTO mensagens SET nome = :nome, msg = :msg, data_msg = NOW()");
+			$sql->bindValue(":nome", $nome);
+			$sql->bindValue(":msg", $mensagem);
+			$sql->execute();
+			header("Location: index.php");// envia de volta para a página index, assim não reeenvia os dados de novo.
 		}
+	
+}
+	$sql = "SELECT * FROM mensagens ORDER BY data_msg DESC";
+	$sql = $pdo->query($sql);
+	if($sql->rowCount() > 0){
+		foreach($sql->fetchAll() as $mensagens):
+		?>
+		<strong><?php echo $mensagens['nome']; ?></strong></br>
+			<?php echo $mensagens['msg']; ?>
+		<hr/>
+
+		<?php
+		endforeach;	
+	}else {
+		echo "Nao possui mensagens";
+	}
 
 
-
-	 ?>
-</table>
+?>

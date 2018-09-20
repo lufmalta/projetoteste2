@@ -1,51 +1,47 @@
 <?php 
+require "config.php";
+
+if(isset($_POST['email']) && empty($_POST['email']) == false){
+	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['email']);
+	$config =  new Config();
+	$pdo = $config->getPdo();// aqui o pdo esta sendo inserido dentro da variavel pdo
+	$sql = $pdo->prepare("INSERT INTO usuarios SET nome = :nome, email = :email");//aqui o sql esta com valor do pdo
+	$sql->bindValue(":nome",$nome);
+	$sql->bindValue(":email",$email);
+	$sql->execute();
+	$id = $pdo->lastInsertId();
+	//header("Location: index.php");
+
+	$md5 = md5($id);
+	$link = 'http://www.meusite.com.br/confirmarcadastro/cadastro.php?h='.$md5;
+
+	$assunto = "Confirme seu cadastro";
+	$msg = "Clique no link abaixo para confirmar seu cadastro"."\n\n".$link;
+	$headers = "From: lufmalta@gmail.com"."\r\n".
+			   "X-Mailer: PHP/".phpversion();
+
+	mail($email, $assunto, $msg, $headers);
 	
-	if(isset($_POST['nome']) && !empty($_POST['nome'])){
 
-		$nome = addslashes($_POST['nome']);
-		$email = addslashes($_POST['email']);
-		$msg = addslashes($_POST['msg']);
 
-		$para = "lufmalta@gmail.com";
-		$assunto = "Pergunta do Contato";
-		$corpo = "Nome: ".$nome." - Email: ".$email." - Mensagem: ".$msg;
-		$cabecalho = "From: palavradevidajesusnocentro@gmail.com"."\r\n".
-					 "Reply-To: ".$email."\r\n".
-					 "X-Mailer: PHP/".phpversion(); //é necessário usar  esses parâmetros, para
-					 // o email não cair no spam ou no lixo eletrônico do email.
-					 //a resposta para a pessoa, será baseada nesse cabecalho.
-
-		mail($para, $assunto, $corpo, $cabecalho);
-
-		echo "<h2>Email Enviado com Sucesso</h2>";
-		exit;			 	
-	}
-
+}
 ?>
 
-
-
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Enviando E-mails</title>	
-	</head>
-	<body>
-				
-			<form method="POST" >
-				
-				Nome:</br>
-				<input type="text" name="nome" /></br></br>
-			
-				E-mail:</br>
-				<input type="email" name="email"  /></br></br>
-			
-				Mensagem:</br>
-				<textarea name="msg"></textarea></br></br>
+<head>
+	<title>Confirma Email</title>
+</head>
+<body>
+	<form method="POST">
+		Nome:<br/>
+		<input type="text" name="nome" /><br/><br/>
 
-				<input type="submit" value="Enviar"/>
+		E-mail:<br/>
+		<input type="email" name="email"/><br/><br/>
+		<input type="submit" value="Cadastrar"/>
 
-			</form>
-
-	</body>
+	</form>
+</body>
 </html>

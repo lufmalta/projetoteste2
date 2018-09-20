@@ -16,31 +16,29 @@
 </head>
 <body>
 	
-	<div class="container" >
-		<img src="assets/images/foto1.jpg" data-toggle="modal" data-target="#janela">  
-		<div class="modal fade modal-dismissible" id="janela" role="modal">
-			<div class="modal-dialog  modal-lg">
-				<div class="modal-content">				
-					<div class="modal-body">
-						<div class="row" >
-							<div class="col">
-								<button class="close" data-dismiss="modal" style="border:1px solid #ccc;background-color:red;">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>							
-						</div>
-						<div class="row">
-							<div class="col">
-								<img src="assets/images/foto1.jpg" class="w-100">
-							</div>
-						</div>
-							
-										
+	<div class="container">
 
-					</div>
+		<nav class="navbar navbar-expand-sm navbar-light bg-light"> <!-- esse expand serve para fazer o botao aparecer s󠱵ando estiver no tamanho small -->
+
+			<a class="navbar-brand" href="#">Empresa XYZ</a>
+
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"> <!-- esse botao s󠡰arece quando o tamanho estiver em formato celular -->
+				<span class="navbar-toggler-icon"></span> <!-- esse 顯 icone de menu que vai aparecer no botao -->
+			</button>
+			<div class="navbar-collapse collapse" id="navbarMenu">
+				<div class="navbar-nav"> <!-- esse conteudo aqui dentro aparece normalmente, todavia quando ficar do tamanho small ele some, e so aparece novamente se apertar o botao do menu -->
+					<a href="" class="nav-item nav-link">Link 1</a>
+					<a href="" class="nav-item nav-link">Link 2</a>
+					<a href="" class="nav-item nav-link">Link 3</a>
+					<a href="" class="nav-item nav-link">Link 4</a>
 				</div>
 			</div>
-		</div>
+			<form method="POST" class="form-inline"> <!-- esse inline serve para a pesquisa ficar na mesma linha -->
+
+				<input type="text" class="form-control" placeholder="Pesquisar"/>
+			</form>
+			
+		</nav>	
 	</div>
 			
 

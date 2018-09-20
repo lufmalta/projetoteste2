@@ -17,33 +17,54 @@
 <body>
 	
 	<div class="container">
-		<div id="slideShow" class="carousel slide">
-			<ol class="carousel-indicators">
-				<li data-target="#slideShow" data-slide-to="0"></li>
-				<li data-target="#slideShow" data-slide-to="1"></li>
-				<li data-target="#slideShow" data-slide-to="2"></li>
-				<li data-target="#slideShow" data-slide-to="3"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="assets/images/foto1.jpg" class="w-100" >
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#c1" aria-controls="#c1">Onde posso contactar</button>
 				</div>
-				<div class="carousel-item">
-					<img src="assets/images/foto2.jpg" class="w-100" >
+				<div id="c1" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+					Voce pode nos achar na cidade goiania, no interior de goias, apenas andando ape ou de carro, ou ate mesmo se quiser de aviao. 
+					</div>
+				</div>				
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#c2"
+					aria-controls="#c2">Quer um conselho?</button>
 				</div>
-				<div class="carousel-item">
-					<img src="assets/images/foto3.jpg" class="w-100" >
+				<div id="c2" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+					Voce precisa estudar mais, assim ira conseguir um emprego melhor, e Deus ira abrir as portas pra voce, ou melhor, as portas ja estao abertas!!!
+					</div>
 				</div>
-				<div class="carousel-item">
-					<img src="assets/images/foto4.jpg" class="w-100" >
+				
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#c3"
+					aria-controls="#c3">Desistiu?</button>
+				</div>
+				<div id="c3" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+					Vai orar e estudar mais!
+					</div>
+				</div>
+				
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#c4"
+					aria-controls="#c4">Outro botao</button>
+				</div>
+				
+				<div id="c4" class="collapse" data-parent="#accordion">
+					<div class="card-body" >
+						Aqui você pode saber o que você quer saber .....
+					</div>
 				</div>
 			</div>
-			<a class="carousel-control-prev" href="#slideShow" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			</a>
-			<a class="carousel-control-next" href="#slideShow" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			</a>
 		</div>
 	</div>		
 

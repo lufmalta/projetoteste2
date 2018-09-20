@@ -16,9 +16,35 @@
 </head>
 <body>
 	
-	<div class="container">
-		<button class="btn btn-success" data-toggle="tooltip" title="Quando voce salvar, ira armazenar tudo no banco de dados" data-placement="right">Salvar</button>
-	</div>
+	<header style="background-color:red;">
+		<div class="container" style="background-color:blue;">
+			...<br/>
+			...<br/>
+			...
+		</div>
+	</header>
+	<section style="margin-top:10px;background-color:red;">
+		<div class="container d-flex justify-content-between" style="background-color:blue;">
+			<section style="background-color:yellow">
+				...<br/>
+				...<br/>
+				...
+			</section>
+			<aside style="background-color:red;">
+				...<br/>
+				...<br/>
+				...
+			</aside>
+			
+		</div>
+	</section>
+	<footer style="background-color:red;margin-top:10px;">
+		<div class="container d-flex justify-content-between" style="background-color:blue;">
+			<div class="esquerdo" style="background-color:yellow;">...</div>
+			<div class="meio" style="background-color:orange;">...</div>
+			<div class="direito" style="background-color:black;">...</div>
+		</div>
+	</footer>
 			
 
 			

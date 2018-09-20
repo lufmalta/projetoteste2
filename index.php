@@ -23,3 +23,5 @@ if(empty($_SESSION['logado'])){
 }
 ?>
 <h1>Conteudo confidencial</h1>
+
+<h2>Algo novo</h2>

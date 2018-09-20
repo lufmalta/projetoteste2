@@ -1,36 +1,24 @@
-<?php 
-	require "contato.class.php";
-	$voltar = new Contato();
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Adicionar contato</title>
-</head>
-<body>
-	<h1>Adicionar</h1>
-	<form method="POST">
-		Email:</br>
-		<input type="email" name="email"/></br>
-		Nome:</br>
-		<input type="text" name="nome"/></br></br>
-		<input type="submit" value="Adicionar"/>
-		<button><a style="text-decoration:none;color:#000000;"href="index.php">Voltar</a></button>
-	</form>
-	
-</body>
-</html>
+<h1>Adicionar documento</h1>
 <?php
-
-
-	if(isset($_POST['email']) && empty($_POST['email']) == false){
-		$email = addslashes($_POST['email']);
-		$nome = addslashes($_POST['nome']);
-		$add = new Contato();
-		$add->adicionar($email, $nome);
-		$_POST['email'] = "";
-		$_POST['nome'] = "";
-		header("Location: index.php");
-	}
- ?>
+require "config.php";
+session_start();
+if(!isset($_SESSION['logado'])){
+	header("Location: login.php");
+	exit;
+}
+if(isset($_POST['titulo']) && !empty($_POST['titulo'])){
+	$conexao = new Conexao();
+	$sql = "INSERT INTO documentos (titulo) VALUES (:titulo)";
+	$sql = $conexao->getPDO()->prepare($sql);
+	$sql->bindValue(":titulo",$_POST['titulo']);
+	$sql->execute();
+	header("Location: index.php");
+	exit;
+}
+?>
+<form method="POST">
+	Documento:<br/>
+	<input type="text" name="titulo"/><br/></br>
+	<input type="submit" value="Cadastrar"/>
+</form>
+<a href="index.php"><button>Voltar</button></a>

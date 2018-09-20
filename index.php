@@ -1,16 +1,10 @@
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"> -->
 
 <?php 
-require "paginacao.class.php";
+require "historico.class.php";
+$log = new Historico();
 
-if(!empty($_GET['limit']) && !empty($_GET['pgAtual']) ){
-	$limit =  addslashes($_GET['limit']);
-	$pgAtual = addslashes($_GET['pgAtual']);
-	$paginacao = new Paginacao($limit, $pgAtual);
-
-}else {
-	$paginacao = new Paginacao();
-}
+$log->registrar("Entrou no index da pagina");
 
 
 ?>

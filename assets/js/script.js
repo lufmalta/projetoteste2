@@ -1,28 +1,35 @@
-var c = document.getElementById("canvas");
-	var ctx = c.getContext("2d");
-	
-	ctx.moveTo(70,230);
-	ctx.lineTo(70,150); 
+function Animal(){
+	this.nome = "";
+	this.idade = 0 ;
+	this.peso = 6;
+	this.raca = "";
 
-	ctx.moveTo(70,230);
-	ctx.lineTo(130,230);
+	this.fazerXixi = function(){
+		console.log("Xiiiii"); // escreve no console da pagina ja o document.write escreve
+		//no body da tela.
+	}
+	this.comer = function (kg){
+		for(var i = 0;i<kg;i++){
+			this.mastigar(i);
+		}
+		console.log("Hum....");
+		this.peso = this.peso + kg;
+	}
 
-	ctx.moveTo(150,230);
-	ctx.lineTo(150,150); 
+	this.mastigar = function(i){
+		console.log(i+"- Nhoc....");
+	}
 
-	ctx.moveTo(150,230);
-	ctx.lineTo(200,230);
+}
 
-	ctx.lineTo(200, 150);
+var cachorro = new Animal();
+cachorro.nome = "Oliver";
+cachorro.idade = 1;
+cachorro.raca = "Cachorro";
+cachorro.comer(10);
 
-	ctx.moveTo(220, 230);
-	ctx.lineTo(220, 150);
 
-	ctx.moveTo(250,150);
-	ctx.lineTo(300, 150);
-
-	ctx.lineTo(243,230);
-
-	ctx.lineTo(303,230);
-
-	ctx.stroke();
+var xuxu = new Animal();
+xuxu.raca = "Gato";
+xuxu.idade = 2;
+xuxu.nome = "Mel";

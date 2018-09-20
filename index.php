@@ -18,61 +18,18 @@
 	
 	<div class="container">
 		<form method="POST">
-			E-mail:<br/>
-			<input type="email" name="email"/><br/>
-
-			Senha:<br/>
-			<input type="password" name="senha"/><br/><br/>
-
-			<input type="submit" value="Entrar"/>
-		</form>
-		<hr/>
-
-		<form method="POST">
-			<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
-				<label for="email">Email:</label>
-				<input id="email" type="email" name="email" class="form-control" />
-			</div>
-			<div class="form-group">
-				
-				<input type="password" name="senha" class="form-control" placeholder="Senha"  />
-			</div>
-			<div class="form-group">
-				<input class="btn btn-danger" type="submit" value="Entrar">
-			</div>
-			
-			
-			
-		</form>
-		<hr/>
-		<form method="POST">
-			<div class="form-row">
-				<div class="col">
-					<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
-						<input id="name" type="text" name="name" class="form-control" placeholder="Nome Completo:"/>
-					</div>
+			<div class="input-group input-group-lg">
+				<div class="input-group-prepend">
+					<span class="input-group-text">R$</span>
 				</div>
-				<div class="col">					
-					<div class="form-group"> <!-- se colocar aqui form-inline, os campos irao ficar um do lado do outro e n䯠um embaixo do outro -->
-						<input id="email" type="email" name="email" class="form-control" placeholder="Email:"/>
-					</div>
-				</div>
-				<div class="col">
-					<div class="form-group">				
-						<input type="password" name="senha" class="form-control" placeholder="Senha:"  />
-					</div>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col">
-					<div class="form-group">
-						<input class="btn btn-success" type="submit" value="Entrar">
-					</div>
+				<input class="form-control" type="text" name="valor" placeholder="Digite o valor"/>
+				<div class="input-group-append">
+					<span class="input-group-text">,00</span>
 				</div>
 			</div>
 		</form>
 		
-	</div>	
+	</div>
 
 			
 

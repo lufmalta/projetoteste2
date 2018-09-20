@@ -1,23 +1,33 @@
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"> -->
 
-<?php
+<?php 
 
- class Cachorro {
+	class Humano{
 
+		private $nome;
+		private $carac;
+		private $cidade;
 
- 	public function latir(){
- 		echo "Au au";
- 	}
+	public function Adicionar($n, $carac, $cidade){
+		$this->nome = $n;
+		$this->carac = $carac;
+		$this->cidade = $cidade;
+	}
+
+	public function Resposta(){
+		echo $this->nome."</br>";
+		echo $this->carac."</br>";
+		echo $this->cidade;
+	}	
+
 }
 
-$cachorro = new Cachorro();
-$cachorro->latir();
+$pessoa = new Humano();
+$pessoa->Adicionar("Luiz", "Bonito", "Goiania");
+//$pessoa->setNome("Fernando");
+$pessoa->Resposta();
 
-
-// se eu quiser usar a funcao sem criar uma instancia, é só usar este comando:
-// Cachorro::latir(); -- todavia ele n tera nenhum objeto, apenas ira usar o método latir.
-
- ?>
+?>
 
 	<!-- <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script> -->

@@ -17,13 +17,7 @@
 <body>
 	
 	<div class="container">
-		<ul class="pagination justify-content-center">
-			<li class="page-item "><a class="page-link" href="#">1</a></li>
-			<li class="page-item "><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item"><a class="page-link" href="#">5</a></li>
-		</ul>	
+		<button class="btn btn-success" data-toggle="tooltip" title="Quando voce salvar, ira armazenar tudo no banco de dados" data-placement="right">Salvar</button>
 	</div>
 			
 
@@ -38,5 +32,10 @@
 
 	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		$('[data-toggle="tooltip"]').tooltip();	
+		});
+	</script>
 </body>
 </html>

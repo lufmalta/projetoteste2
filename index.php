@@ -1,40 +1,54 @@
 <?php 
-	require 'config.php';
+	$dsn = "mysql:dbname=projeto_ordenar;host=localhost";
+	$dbuser = "root";
+	$dbpass = "";
+try {
+	$pdo = new PDO($dsn, $dbuser, $dbpass);
+	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
 
+} catch(PDOExcepetion $e){
+	echo "Erro banco".$e->getMessage();
+}	
+	if(isset($_GET['ordem']) && empty($_GET['ordem']) == false){
+		$ordem = addslashes($_GET['ordem']);
+		$sql = "SELECT * FROM usuarios ORDER BY ".$ordem;
+	}else {
+		$ordem = '';
+		$sql = "SELECT * FROM usuarios"; 
+	}
 ?>
-<html>
-<head>
-	<title>Usuarios</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<a style="margin-left:500px;" href="adicionar.php">Adicionar Usuário</a></br></br>
-	<table border="0" width="100%">
-		<tr>
+<form method = "GET">
+	<select name="ordem" onchange="this.form.submit()">
+		<option></option>
+		<option value="nome" <?php echo($ordem=="nome")?'selected="selected"':'' ?>>Por nome</option>
+		<option value="idade" <?php echo($ordem=="idade")?'selected="selected"':'' ?>>Por idade</option>
+	</select>
 
-			<th>Nome</th>
-			<th>Email</th>
-			<th>Ações</th>
+</form>
+<table border="1" width="400">
+	<tr>
+		<th colspan="2">Usuarios</th>
 
-		</tr>
-		<?php
-			$sql = "SELECT * FROM usuarios";
-			$sql = $pdo->query($sql);
-			if($sql->rowCount() > 0 ){
-				foreach($sql->fetchAll() as $usuarios){
-					echo '<tr>';
-					echo '<td>'.$usuarios['nome'].'</td>';
-					echo '<td>'.$usuarios['email'].'</td>';
-					echo '<td><a href="editar.php?id='.$usuarios['id'].'">Editar</a></td>';
-					echo '<td><a href="excluir.php?id='.$usuarios['id'].'">Excluir</a></td>';
-					echo '</tr>'; 
-				}
-			}
+	</tr>
+	<tr>
+		<th>Nome</th>
+		<th>Idade</th>
+	</tr>
+	<?php
+		$sql = $pdo->query($sql);
+		if($sql->rowCount() > 0){
+			foreach($sql->fetchAll() as $usuario):
+			?>
+				<tr>
+					<td><?php echo $usuario['nome'] ?></td>
+					<td><?php echo $usuario['idade'] ?></td>
+				</tr>
+			<?php
+			endforeach;	
 
-		 ?>
+		}
 
-	</table>
-	
 
-</body>
-</html>
+
+	 ?>
+</table>

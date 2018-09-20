@@ -7,57 +7,30 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css">
 	<title>Projeto Bootstrap 4</title>
 	<style type="text/css">
-	.avatar {
-		width:50px;
-		height:50px;
-	}		
+		.caixa{
+			width:300px;
+			height:300px;
+			border:1px solid #CCC;
+		}
 
 
 	</style>
 </head>
 <body>
 	
-			<div class="container" >
-
-				<div class="media">
-					<img src="assets/images/cruz.png" class="mr-3 avatar align-self-center"> <!-- esse mr-3 e a margin para separar a imagem do texto -->
-					<div class="media_body">
-						<h5>Mudande site</h5>
-						<p>Aqui esta meu , se iser fazer mais um novo entlique no botao enviar e escreva antes a sua mensagem, para que seja formulado e anotado todas as infos</p>
-
-					</div>
-				</div>
-				<hr/>
-				<h3>Outra maneira de fazer isso, usando uma lista:</h3>
-
-				<ul class="list-unstylied" >
-					<li class="media">
-						<img src="assets/images/cruz.png" class="mr-3 avatar align-self-center"> <!-- esse mr-3 e a margin para separar a imagem do texto -->
-						<div class="media_body">
-						<h5>Mudande site</h5>
-						<p>Aqui esta meu fazer mais um no, clique no botao enviar e escreva antes a sua mensagem, para que seja formulado e anotado todas as informas</p>
-
-						</div>						
-					</li>
-					<li class="media">
-						<img src="assets/images/cruz.png" class="mr-3 avatar align-self-center"> <!-- esse mr-3 e a margin para separar a imagem do texto -->
-						<div class="media_body">
-						<h5>Mudande site</h5>
-						<p>Aqui esta meu clique no botao enviar e escreva antes a sua mensagem, para que seja formulado e anotado todas as informas</p>
-
-						</div>
-					</li>
-					<li class="media" >
-						<img src="assets/images/cruz.png" class="mr-3 avatar align-self-center""> <!-- esse mr-3 e a margin para separar a imagem do texto -->
-						<div class="media_body" >
-						<h5>Mudan site</h5>
-						<p>Aqui esta no botao enviar e escreva antes a sua mensagem, para que seja formulado e anotado todas as informas</p>
-
-						</div>
-					</li>
-				</ul>
-
-			</div>
+		<div class="container">
+			<ul class="list-inline">
+				<li class="list-inline-item">Item 1</li>
+				<li class="list-inline-item">Item 2</li>
+				<li class="list-inline-item">Item 3</li>
+			</ul>
+			<br/>
+			<h1>Aqui esta o titulo sem o class h1</h1>
+			<div class="h1">Aqui esta o titulo com o class h1</div>
+			<h3>Aqui tem um titulo e <span class="text-muted">Subtitulo</span></h3>
+			<h3>Aqui tem um titulo e <span class="mark">Marcado</span></h3>
+			<div class="caixa text-center">Aqui tem um texto</div>
+		</div>
 
 			
 

@@ -1,31 +1,64 @@
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"> -->
 
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PHP Orientado a objetos</title>
+	</head>
+	<body>
+		
+	</body>
+</html>
 <?php 
+	class Post {
+		private $titulo;
+		private $data;
+		private $corpo;
+		private $comentarios;
 
-	class Humano{
-
-		private $nome;
-		private $carac;
-		private $cidade;
-
-	public function Adicionar($n, $carac, $cidade){
-		$this->nome = $n;
-		$this->carac = $carac;
-		$this->cidade = $cidade;
+	public function getTitulo(){
+		return $this->titulo;
 	}
 
-	public function Resposta(){
-		echo $this->nome."</br>";
-		echo $this->carac."</br>";
-		echo $this->cidade;
-	}	
+	public function getData(){
+		return $this->data;
+	}
 
-}
+	public function getCorpo(){
+		return $this->corpo;
+	}
 
-$pessoa = new Humano();
-$pessoa->Adicionar("Luiz", "Bonito", "Goiania");
-//$pessoa->setNome("Fernando");
-$pessoa->Resposta();
+	public function getComentarios(){
+		return $this->comentarios;
+	}
+
+	public function setTitulo($t){
+		$this->titulo = $t;
+	}
+
+	public function setData($dt){
+		$this->data = $dt;
+	}
+
+	public function setCorpo($corp){
+		$this->corpo = $corp;
+	}
+
+	public function setComentarios($coment){
+		$this->comentarios = $coment;
+	}
+
+	}
+
+$post = new Post();
+$post->setTitulo("novo titulo");
+$post->setData("11/07/1990");
+$post->setCorpo("Este é espaço");
+$post->setComentarios("Nao tem nada aqui");
+
+echo "Titulo: ".$post->getTitulo()."</br> Data: ".$post->getData()."</br> Corpo: ".$post->getCorpo().
+"</br> Comentarios: ".$post->getComentarios();	
+
 
 ?>
 

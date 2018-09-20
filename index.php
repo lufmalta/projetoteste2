@@ -17,56 +17,22 @@
 <body>
 	
 	<div class="container">
-		<div id="accordion">
-			<div class="card">
-				<div class="card-header">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#c1" aria-controls="#c1">Onde posso contactar</button>
-				</div>
-				<div id="c1" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-					Voce pode nos achar na cidade goiania, no interior de goias, apenas andando ape ou de carro, ou ate mesmo se quiser de aviao. 
-					</div>
-				</div>				
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#c2"
-					aria-controls="#c2">Quer um conselho?</button>
-				</div>
-				<div id="c2" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-					Voce precisa estudar mais, assim ira conseguir um emprego melhor, e Deus ira abrir as portas pra voce, ou melhor, as portas ja estao abertas!!!
-					</div>
-				</div>
-				
-			</div>
 
-			<div class="card">
-				<div class="card-header">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#c3"
-					aria-controls="#c3">Desistiu?</button>
-				</div>
-				<div id="c3" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-					Vai orar e estudar mais!
-					</div>
-				</div>
-				
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#c4"
-					aria-controls="#c4">Outro botao</button>
-				</div>
-				
-				<div id="c4" class="collapse" data-parent="#accordion">
-					<div class="card-body" >
-						Aqui você pode saber o que você quer saber .....
-					</div>
+			<div class="dropdown btn-group"> <!-- posso fazer o menu abrir para esquerda, direita, cima e baixo, s󠵳ar os comandos dentro do class: para cima- dropup, para esquerda dropleft, para direita dropright -->
+				<a class="btn btn-primary" href="http://www.instagram.com.br">Instagram</a>
+				<a class="btn btn-primary dropdown-toggle dropdown-toggle-split" href="#" data-toggle="dropdown"></a>
+
+				<div class="dropdown-menu">
+					<a  class="dropdown-item" href="http://www.google.com.br">Google</a>
+					<a class="dropdown-item" href="http://mail.facebook.com.br">Facebook</a>
+
+					<a class="dropdown-item" href="http://mail.google.com.br">Gmail</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="http://www.youtube.com.br">Youtube</a>
 				</div>
 			</div>
-		</div>
-	</div>		
+			
+		</div>	
 
 			
 

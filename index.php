@@ -1,25 +1,51 @@
 <?php 
+	
+	if(isset($_POST['nome']) && !empty($_POST['nome'])){
 
-	$imagem = "fotocanal.png";
+		$nome = addslashes($_POST['nome']);
+		$email = addslashes($_POST['email']);
+		$msg = addslashes($_POST['msg']);
 
+		$para = "lufmalta@gmail.com";
+		$assunto = "Pergunta do Contato";
+		$corpo = "Nome: ".$nome." - Email: ".$email." - Mensagem: ".$msg;
+		$cabecalho = "From: palavradevidajesusnocentro@gmail.com"."\r\n".
+					 "Reply-To: ".$email."\r\n".
+					 "X-Mailer: PHP/".phpversion(); //é necessário usar  esses parâmetros, para
+					 // o email não cair no spam ou no lixo eletrônico do email.
+					 //a resposta para a pessoa, será baseada nesse cabecalho.
 
-	list($largura_original, $altura_original) = getimagesize($imagem);
-	list($largura_mini, $altura_mini) = getimagesize("cruz.png");
+		mail($para, $assunto, $corpo, $cabecalho);
 
-	$imagem_final = imagecreatetruecolor($largura_original, $altura_original);
+		echo "<h2>Email Enviado com Sucesso</h2>";
+		exit;			 	
+	}
 
-	$imagem_original = imagecreatefrompng("fotocanal.png");
-	$imagem_mini = imagecreatefrompng("cruz.png");
-
-	imagecopy($imagem_final, $imagem_original, 0, 0, 0, 0,
-	 $largura_original, $altura_original);
-
-	imagecopy($imagem_final, $imagem_mini, 1200, 400, 0, 0,
-		$largura_mini, $altura_mini);
-
-	//header("Content-Type: image/png");
-	//imagepng($imagem_final, "imagem_nova_tamanho.png"); Cria a imagem com o nome, 
-	//neste caso a imagem tem duas imagem na mesma, sendo uma a marca d'agua.
-
-	echo "Imagem criada com sucesso!";
 ?>
+
+
+
+
+<html>
+	<head>
+		<title>Enviando E-mails</title>	
+	</head>
+	<body>
+				
+			<form method="POST" >
+				
+				Nome:</br>
+				<input type="text" name="nome" /></br></br>
+			
+				E-mail:</br>
+				<input type="email" name="email"  /></br></br>
+			
+				Mensagem:</br>
+				<textarea name="msg"></textarea></br></br>
+
+				<input type="submit" value="Enviar"/>
+
+			</form>
+
+	</body>
+</html>

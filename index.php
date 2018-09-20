@@ -1,26 +1,23 @@
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"> -->
 
-<?php 
+<?php
 
-class Humano {
-  
-  public function trocarSenha($senhaAtual, $novaSenha){
-    // conectar ao banco de dados
-    // verificar se a senha atual esta correta
-    // trocar a senha
-  
-  }
-  
-  private function ConectarBanco() {
-    //apenas pode ser acessada por outras funcoes que estao nesta class Humano.
-  }
-  
-  protected function algumaCoisa() {
-    //pode ser acessada por funcoes dentro dessa class ou pelas class extendidas(herança) de Humano
-  }
+ class Cachorro {
+
+
+ 	public function latir(){
+ 		echo "Au au";
+ 	}
 }
 
-?>
+$cachorro = new Cachorro();
+$cachorro->latir();
+
+
+// se eu quiser usar a funcao sem criar uma instancia, é só usar este comando:
+// Cachorro::latir(); -- todavia ele n tera nenhum objeto, apenas ira usar o método latir.
+
+ ?>
 
 	<!-- <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script> -->

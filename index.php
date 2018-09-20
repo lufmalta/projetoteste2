@@ -7,83 +7,42 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css">
 	<title>Projeto Bootstrap 4</title>
 	<style type="text/css">		
-		#active {
-			background-color:#39aae1;
-			color:#FFF;
+		.containere{
+			display:flex;
+			flex-direction:column;
+			background-color:#DDD;
+			margin-bottom:5px;
 		}
-		
-		.li {
-			float:left;
-			margin-left:20px;
-			
+		.container2{
+			display:flex;
+			flex-direction:row;
+			background-color:#DDD;
 		}
-		.li a {
-			padding:15px;
-			font-size:20px;
-			height:100px;
-			color:#000;
-			text-decoration:none;
-		}
-		.li a:hover {
-			background-color:#39aae1;
-			color:#FFF;
-		}
-		.carousel-item img{
-			
-			height:650px;
+
+		.containere div,
+		.container2 div {
+			flex:1; /* quando coloca isso, fala que é do grupo 1, entao todas as div irao se dividir dentro do grupo 1, caso tenha uma div com flex:2 entao o grupo 2 vai ter o dobro do flex: 1*/
+			background-color:red;
+			margin:10px;
+			padding:10px;
+			font-size:18px;
+			font-family: Arial;
 		}
 
 	</style>
 </head>
 <body style="margin-top:30px;">
 	
-	<header>
- 		<div class="container d-flex justify-content-around" style="">
- 			<div class="banner" style="width:300px;">
- 				<img src="assets/images/cruz.png" width="300" height="110">
- 			</div>
- 			<div class="menu" style="height:100px;line-height:50px;">
- 				<div class="ul">
- 					<div class="li"><a href="#" id="active">Home</a></div>
- 					<div class="li"><a href="#">Sobre</a></div>
- 					<div class="li"><a href="#">Contato</a></div>
- 					<div class="li"><a href="#">Perfil</a></div>
- 				</div>
- 			</div>
- 		</div>
- 	</header>
- 	<section>
- 		<div class="container">
- 			<div class="carousel slide" id="slideShow">
- 				<ol class="carousel-indicators">
- 					<li data-target="#slideShow" data-slide-to="0"></li>
- 					<li data-target="#slideShow" data-slide-to="1"></li>
- 					<li data-target="#slideShow" data-slide-to="2"></li>
- 					<li data-target="#slideShow" data-slide-to="3"></li>
- 				</ol>
- 				<div class="carousel-inner">
- 					<div class="carousel-item active">
- 						<img src="assets/images/foto1.jpg" class="w-100" >
- 					</div>
- 					<div class="carousel-item">
- 						<img src="assets/images/foto2.jpg" class="w-100">
- 					</div>
- 					<div class="carousel-item">
- 						<img src="assets/images/foto3.jpg" class="w-100">
- 					</div>
- 					<div class="carousel-item">
- 						<img src="assets/images/foto2.jpg" class="w-100">
- 					</div>
- 				</div>
- 				<a class="carousel-control-prev" href="#slideShow" data-slide="prev">
- 					<span class="carousel-control-prev-icon"></span>
- 				</a>
- 				<a class="carousel-control-next" href="#slideShow" data-slide="next">
- 					<span class="carousel-control-next-icon"></span>
- 				</a>
- 			</div>
- 		</div>
- 	</section>
+	<div class="containere">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<div class="container2">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
 			
 
 			

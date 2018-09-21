@@ -1,25 +1,17 @@
 $(function(){
 
-	$('#objeto').bind('mousedown', function(){
+	$('a.galeria').bind('click', function(){
+		var caminho = $(this).find('img').attr('src');
+		$('.divbox img').attr('src', caminho);
 
-	 $('#objeto').bind('mousemove', function(e){
-
-	 	var x = e.originalEvent.pageX;
-	 	var y = e.originalEvent.pageY;
-
-	 	var width = $(this).width();
-	 	var height = $(this).height();
-
-	 	$('#objeto').css('left', (x -(width/2)) + 'px');
-	 	$('#objeto').css('top', (y -(height/2) )+ 'px');
-
-	 });
+		$('.bgbox, .divbox').fadeIn('fast');	
 
 	});
 
-	$('#objeto').bind('mouseup', function(){
+	$('.bgbox, .divbox button').bind('click', function(){
 
-		$('#objeto').unbind('mousemove');
+			$('.bgbox, .divbox').fadeOut('fast');
+
 
 	});
 });

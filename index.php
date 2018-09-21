@@ -4,45 +4,47 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	<link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/>
+	<!-- <link 	rel="stylesheet" type="text/css" href="assets/css/bootstrap4-css/bootstrap.min.css"/> -->
 	<style type="text/css">
-		
-		.menu{
-			width:850px;
-			height:70px;
+		.placar {
+			width:150px;
+			height:150px;
+			position:fixed;
+			left:0;
+			top:0;
 			background-color:#DDD;
-			bottom:0px;
+			border:1px solid #999;
+			text-align:center;
+		}
+		#placar {
+			padding: 0px 5px;
+			font-size:50px;
+			border:1px solid #CCC;
+		}
+		.button {
+			background-color:#FFF;
+		}
+		.bola {
+			width:50px;
+			height:50px;
+			border-radius:25px;
 			position:absolute;
-			left:50%;
-			margin-left:-400px;
 		}
-		.icone {
-			width:70px;
-			height:70px;
-			background-color:#CCC;
-			float:left;
-			margin-right:9px;
-			cursor:pointer;
-			border-radius:20px;
-		}
+		
 	</style>
 
 </head>
-<body style="margin:0;">
-		
-	<div class="menu">
-		<div class="icone"></div>
-		<div class="icone"></div>
-		<div class="icone"></div>
-		<div class="icone"></div>
-		<div class="icone"></div>
-		<div class="icone"></div>
-		<div class="icone"></div>
-	</div>
-
+<body >
+	<div class="placar">
+		Bolas estouradas:<br/>
+		<span id="placar">0</span><br/><br/>
+		<button class="button" id="comecar">Começar o Jogo</button>
+		<button class="button" id="parar">Parar o Jogo</button>
+	</div>		
+	
 
 	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
 	<script type="text/javascript" src="assets/js/bootstrap4-js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 

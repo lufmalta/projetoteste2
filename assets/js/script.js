@@ -1,35 +1,30 @@
-function Animal(){
-	this.nome = "";
-	this.idade = 0 ;
-	this.peso = 6;
-	this.raca = "";
+// $(function(){
 
-	this.fazerXixi = function(){
-		console.log("Xiiiii"); // escreve no console da pagina ja o document.write escreve
-		//no body da tela.
-	}
-	this.comer = function (kg){
-		for(var i = 0;i<kg;i++){
-			this.mastigar(i);
-		}
-		console.log("Hum....");
-		this.peso = this.peso + kg;
-	}
+// 	$('.icone').hover(function(){
+// 		$(this).width(100);
+// 		$(this).height(100);
+// 		$(this).attr('style','margin-top:-30px;');
 
-	this.mastigar = function(i){
-		console.log(i+"- Nhoc....");
-	}
+// 	}, function(){
+// 		$(this).height(70);
+// 		$(this).attr('style','margin-top:0px;');
+// 	});
 
-}
+// }); //ambos funcionam, mas esse nao faz um efeito legal igual o animate
 
-var cachorro = new Animal();
-cachorro.nome = "Oliver";
-cachorro.idade = 1;
-cachorro.raca = "Cachorro";
-cachorro.comer(10);
+$(function(){
 
-
-var xuxu = new Animal();
-xuxu.raca = "Gato";
-xuxu.idade = 2;
-xuxu.nome = "Mel";
+	$('.icone').hover(function(){
+		$(this).animate({
+			"width":100,
+			"height":100,
+			"margin-top":-30
+		}, 200);
+	}, function(){
+		$(this).animate({
+			"width":70,
+			"height":70,
+			"margin-top":0
+		}, 200);
+	});
+});

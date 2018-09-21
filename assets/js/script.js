@@ -1,53 +1,80 @@
 $(function(){
 
-	$('#senha').bind('keyup', function(){
+	$('#objeto').bind('mousedown', function(){
 
-		var txt = $(this).val();
-		var forca = 0;
-		
-		//$('#forca').html(txt); 
+	 $('#objeto').bind('mousemove', function(e){
 
-		//letras
-		//numeros
-		//caracteres especiais
-		//min de caracteres
-		if(txt.length > 15){
-			forca += 20;
-		}
-		if(txt.length > 6){
-			forca += 20;
-		}
+	 	var x = e.originalEvent.pageX;
+	 	var y = e.originalEvent.pageY;
 
-		var reg = new RegExp(/[a-z]/i);
+	 	var width = $(this).width();
+	 	var height = $(this).height();
 
-		if(reg.test(txt)){
-			forca += 20;
-		}
+	 	$('#objeto').css('left', (x -(width/2)) + 'px');
+	 	$('#objeto').css('top', (y -(height/2) )+ 'px');
 
-		var reg = new RegExp(/[0-9]/i);
-
-		if(reg.test(txt)){
-			forca += 20;
-		}
-
-		var reg = new RegExp(/[^a-z0-9]/i);
-		if(reg.test(txt)){
-			forca += 20;
-		}
-		if(forca == 0){
-
-		}else if(forca == 20){
-			$('#forca').html('Senha: '+'<span style="color:red;">Muito fraca</span> ' + ' - <span style="color:red;"> Nao Aceita</span>');
-		}else if(forca == 40){
-			$('#forca').html('Senha: '+'<span style="color:red;">Fraca</span> ' + '- <span style="color:red;"> Nao Aceita</span>');
-		}else if(forca == 60){
-			$('#forca').html('Senha: '+'<span style="color:green;"> Media</span> ' + '- <span style="color:green;"> Aceita</span>');
-		}else if(forca == 80){
-			$('#forca').html('Senha: '+'<span style="color:green;"> Forte</span> ' + '- <span style="color:green;"> Aceita</span>');
-		}else if(forca == 100){
-			$('#forca').html('Senha: '+'<span style="color:green;"> Muito forte</span> ' + '- <span style="color:green;"> Aceita</span>');
-		}
+	 });
 
 	});
 
+	$('#objeto').bind('mouseup', function(){
+
+		$('#objeto').unbind('mousemove');
+
+	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(function(){
+
+// 	$('#objeto').bind('mousedown', function(){
+
+// 		$('#objeto').bind('mousemove', function(e){
+
+// 		var x = e.originalEvent.pageX;	
+// 		var y = e.originalEvent.pageY;
+
+
+// 		var width = $(this).width();
+// 		var height = $(this).height();
+
+					
+// 			//console.log(e.originalEvent.pageY);// para olhar isso é só mandar aparecer no
+// 			// console.log o 'e' e depois entrar nele e descobrir a pagex e pagey
+// 			$(this).css('left', (x - (width/2)) +'px' );
+// 			$(this).css('top', (y - (height/2)) +'px');
+// 		});
+
+// 	});
+
+// 	$('#objeto').bind('mouseup', function(){
+
+// 		$('#objeto').unbind('mousemove');
+// 	});
+
+// });

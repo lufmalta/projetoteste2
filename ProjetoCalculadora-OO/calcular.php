@@ -13,7 +13,7 @@ if(isset($_POST['somar'])){
 ?>
 
 <?php 
-	require "calculadora.class.php";
+	require "classes/calculadora.class.php";
 	//exit;
 
 

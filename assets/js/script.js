@@ -11,6 +11,7 @@ $(function(){
 	var img = $(this).find('img').attr('src');
 	$('#reiniciar').attr('disabled','');
 
+
 	$('.campo').bind('click', function(){
 		var selecionado = $(this).attr('data-marcado');
 		if(selecionado == ''){
